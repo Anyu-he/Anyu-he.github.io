@@ -1,255 +1,44 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>何安雨 | 个人主页</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Quicksand", system-ui, "Microsoft YaHei", sans-serif;
-        }
-        :root {
-            --bg: #F8F2E4;
-            --main-brown: #947A64;
-            --light-pink: #E8CFC1;
-            --text-dark: #4A3F35;
-            --card-border: #dfd6c5;
-            --card-bg: #fffbf5;
-        }
-        body {
-            background-color: var(--bg);
-            color: var(--text-dark);
-            min-height: 100vh;
-            padding: 40px 16px;
-        }
-        .container {
-            max-width: 920px;
-            margin: 0 auto;
-        }
-        /* 导航按钮样式 + 点击按压效果 */
-        nav {
-            text-align: center;
-            margin-bottom: 52px;
-        }
-        .nav-btn {
-            background: transparent;
-            border: 1.8px solid var(--main-brown);
-            color: var(--main-brown);
-            padding: 10px 22px;
-            border-radius: 999px;
-            font-size: 16px;
-            margin: 0 8px 10px;
-            cursor: pointer;
-            transition: all 0.18s ease;
-        }
-        .nav-btn:hover {
-            background-color: var(--light-pink);
-        }
-        .nav-btn:active {
-            transform: scale(0.94) translateY(2px);
-            background-color: var(--light-pink);
-        }
-        /* 卡牌容器 扑克牌动画载体 */
-        .card-wrap {
-            position: relative;
-            min-height: 580px;
-            display: flex;
-            justify-content: center;
-        }
-        .content-card {
-            width: 100%;
-            padding: 36px;
-            border: 1.5px solid var(--card-border);
-            border-radius: 22px;
-            background-color: var(--card-bg);
-            box-shadow: 2px 4px 12px rgba(148, 122, 100, 0.09);
-            position: absolute;
-            opacity: 0;
-            visibility: hidden;
-        }
-        .content-card.active {
-            opacity: 1;
-            visibility: visible;
-            animation: cardSpread 0.7s ease-out forwards;
-        }
-        /* 半圈扑克牌铺开入场动画 */
-        @keyframes cardSpread {
-            0% {
-                transform: translate(-100px, 70px) rotate(-20deg) scale(0.86);
-                opacity: 0;
-            }
-            100% {
-                transform: translate(0, 0) rotate(0deg) scale(1);
-                opacity: 1;
-            }
-        }
-        h2 {
-            color: var(--main-brown);
-            margin-bottom: 24px;
-            font-size: 25px;
-            border-bottom: 1px solid var(--light-pink);
-            padding-bottom: 8px;
-        }
-        h3 {
-            margin: 18px 0 10px;
-            font-size: 18px;
-            color: var(--main-brown);
-        }
-        p, li {
-            line-height: 1.82;
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-        ul {
-            padding-left: 20px;
-            margin: 12px 0;
-        }
-        a {
-            color: var(--main-brown);
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        /* 头像区域 */
-        .avatar-box {
-            text-align: center;
-            margin-bottom: 28px;
-        }
-        .avatar-box img {
-            width: 145px;
-            height: 145px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 3px solid var(--light-pink);
-        }
-        .info-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 24px;
-            margin: 10px 0;
-        }
-        /* 移动端适配 */
-        @media(max-width:620px){
-            .nav-btn{
-                margin:6px 4px;
-                padding:8px 14px;
-                font-size:14px;
-            }
-            .content-card{
-                padding:22px;
-            }
-            .info-row{
-                flex-direction: column;
-                gap:6px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>何安雨 | Editorial Portfolio v2.1</title>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F8F2E4;--brown:#947A64;--pink:#E8CFC1;--ink:#4A3F35}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:Inter,"Microsoft YaHei";line-height:1.8}
+body:before{content:"";position:fixed;inset:0;background-image:radial-gradient(#947a6410 1px,transparent 1px);background-size:18px 18px;pointer-events:none}
+nav{position:fixed;top:25px;left:50%;transform:translateX(-50%);z-index:9;background:#fff9;padding:12px 30px;border-radius:40px;backdrop-filter:blur(12px)}
+nav a{margin:0 12px;text-decoration:none;color:var(--brown);font-size:14px}
+.page{max-width:1100px;margin:auto;padding:80px 40px}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:space-between}
+.hand{font-family:"Ma Shan Zheng";font-size:90px;color:var(--brown)}
+.serif{font-family:"Playfair Display";font-size:32px}
+.photo{width:300px;height:400px;background:#fff;border-radius:150px 150px 20px 20px;border:8px solid var(--pink);display:flex;align-items:center;justify-content:center;color:var(--brown);font-size:40px}
+.section{padding:90px 0;border-top:1px solid #dfd6c5}
+.label{letter-spacing:4px;color:var(--brown)}
+.project{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:50px 0}
+.tag{display:inline-block;background:white;border-radius:20px;padding:5px 15px;margin:5px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.gallery div{height:220px;background:#fff;border:1px solid #dfd6c5;display:flex;align-items:center;justify-content:center}
+@media(max-width:700px){.hero{display:block}.hand{font-size:55px}.photo{width:220px;height:280px;margin-top:40px}.project,.gallery{grid-template-columns:1fr}nav{width:90%;overflow:auto;white-space:nowrap}}
+</style>
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <button class="nav-btn" data-target="home">首页</button>
-            <button class="nav-btn" data-target="edu">教育与荣誉</button>
-            <button class="nav-btn" data-target="exp">科研&实习经历</button>
-            <button class="nav-btn" data-target="skill">技能特长</button>
-            <button class="nav-btn" data-target="contact">联系方式</button>
-        </nav>
-
-        <div class="card-wrap">
-            <!-- 首页板块 -->
-            <div class="content-card active" id="home">
-                <div class="avatar-box">
-                    <!-- 【修改头像只需要替换这里src的图片链接】 -->
-                    <img id="avatarImg" src="" alt="个人头像">
-                </div>
-                <h2>你好，我是何安雨</h2>
-                <div class="info-row">
-                    <p>出生年月：2004-06</p>
-                    <p>性别：女</p>
-                </div>
-                <p>求职意向：<span id="jobTarget">内容运营</span></p>
-                <p>欢迎浏览我的个人主页，这里汇总了我的教育背景、科研、实习经历与专业技能。可随时更新页面内容、更换求职方向与头像。</p>
-            </div>
-
-            <!-- 教育与荣誉 -->
-            <div class="content-card" id="edu">
-                <h2>教育背景 & 荣誉奖项</h2>
-                <h3>2022.09 - 2026.06 上海大学 环境工程 本科</h3>
-                <p>主修课程：微积分、线性代数、概率论与数理统计、数值分析、分析化学、有机化学、GIS 及工程应用、环境模型、大气污染控制工程、水污染控制工程</p>
-                <h3>荣誉奖项</h3>
-                <p>上海大学里斯本学院优秀学生奖学金</p>
-            </div>
-
-            <!-- 科研实习经历 -->
-            <div class="content-card" id="exp">
-                <h2>科研 & 实习经历</h2>
-                <h3>科研课题：《嘉定内河航道船舶排放研究》</h3>
-                <ul>
-                    <li>负责NO、NO₂浓度时间序列数据的清洗、统计与可视化分析；</li>
-                    <li>使用Excel、Origin完成数据处理与图表绘制，分析船舶排放对空气质量NOx浓度影响；</li>
-                    <li>独立输出完整课题研究报告。</li>
-                </ul>
-                <h3>2025.06 - 2025.08 上海城市水资源开发利用国家工程有限公司 | 理化室检测员</h3>
-                <ul>
-                    <li>负责生活污水水样浊度、pH、酸碱度等理化指标日常检测分析；</li>
-                    <li>熟练操作浊度仪、分光光度计等仪器，规范记录原始检测数据；</li>
-                    <li>将检测数据可视化，编制标准化检测报告。</li>
-                </ul>
-            </div>
-
-            <!-- 技能特长 -->
-            <div class="content-card" id="skill">
-                <h2>技能与特长</h2>
-                <ul>
-                    <li><strong>AI工具：</strong>结构化Prompt工程，熟练使用各类主流生成式AI工具</li>
-                    <li><strong>设计多媒体：</strong>PS、PR 图像处理、视频剪辑</li>
-                    <li><strong>数据分析：</strong>Origin、Excel、基础SQL</li>
-                    <li><strong>语言能力：</strong>英语六级 CET-6</li>
-                </ul>
-            </div>
-
-            <!-- 联系方式 -->
-            <div class="content-card" id="contact">
-                <h2>联系我</h2>
-                <p>电话：13685620797</p>
-                <p>邮箱：helena24@163.com</p>
-                <p>其他链接可自行在此处添加：作品集、小红书、GitHub等</p>
-            </div>
-        </div>
-    </div>
-
-<script>
-// ====================== 【内容修改区 全部内容在这里改，不用动页面结构】 ======================
-// 1. 头像链接：填入你的图片网络地址
-const avatarUrl = "";
-// 2. 求职意向，后期换工作直接改这里文字
-const jobText = "内容运营";
-// 3. 如需批量修改姓名、电话、邮箱、项目，直接修改下方DOM内容即可，也可新增字段
-// ======================================================================================
-
-// 自动加载配置
-document.getElementById("avatarImg").src = avatarUrl;
-document.getElementById("jobTarget").innerText = jobText;
-
-// 导航切换 扑克牌动画逻辑
-const buttons = document.querySelectorAll('.nav-btn');
-const cards = document.querySelectorAll('.content-card');
-buttons.forEach(btn => {
-    btn.addEventListener('click', ()=>{
-        const targetId = btn.getAttribute('data-target');
-        // 清除所有卡片激活状态
-        cards.forEach(card=> card.classList.remove('active'));
-        // 启用目标卡片，触发半圈铺开动画
-        document.getElementById(targetId).classList.add('active');
-    })
-})
-</script>
+<nav><a href="#about">About</a><a href="#journey">Journey</a><a href="#work">Works</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
+<div class="page">
+<section class="hero">
+<div><p>hello, I'm</p><div class="hand">何安雨</div><div class="serif">HE AN YU</div><p>finding beauty between science & creativity.</p></div>
+<div class="photo">YOUR<br>PHOTO</div>
+</section>
+<section id="about" class="section"><div class="label">01 / ABOUT</div><h1>My Story</h1><p>环境工程背景学生，关注环境科学、数据分析与人工智能工具结合的可能性。</p></section>
+<section id="journey" class="section"><div class="label">02 / JOURNEY</div><p>2022 — Shanghai University Environmental Engineering</p><p>2024 — Ship Emission Research</p><p>2025 — Water Resource Laboratory</p></section>
+<section id="work" class="section"><div class="label">03 / SELECTED WORKS</div><div class="project"><div><h2>Ship Emission Research</h2><p>NOx analysis · Data visualization · Research report</p></div><div><h2>Laboratory Experience</h2><p>Water quality detection · Instrument operation</p></div></div></section>
+<section id="skills" class="section"><div class="label">04 / SKILLS</div><div class="tag">AI Prompt</div><div class="tag">Excel</div><div class="tag">Origin</div><div class="tag">SQL</div><div class="tag">Photoshop</div></section>
+<section class="section"><div class="label">05 / VISUAL DIARY</div><div class="gallery"><div>Photo</div><div>Project</div><div>Creative</div></div></section>
+<section id="contact" class="section"><div class="label">06 / CONTACT</div><h2>Let's connect</h2><p>Email: helena24@163.com</p></section>
+</div>
 </body>
 </html>
